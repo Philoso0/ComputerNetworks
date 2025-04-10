@@ -46,21 +46,29 @@ for root, dirs, files in os.walk(attachments_dir):
 
 # === Git 同步 ===
 
-remote_name = 'compnet'      # 或 'compnet'
+remote_name = 'compnet'
 branch_name = 'main'
 
 try:
     repo = Repo(repo_path)
 
-    print(f"正在拉取 {remote_name}/{branch_name}...")
-    repo.git.pull(remote_name, branch_name, allow_unrelated_histories=True)
+    if repo.is_dirty(untracked_files=True):
+        print("检测到未提交更改，准备提交...")
+        repo.git.add(all=True)
+        repo.git.commit(m='Auto pre-pull commit')
 
+    # ✅ 提交本地文件更改
     print("添加所有变更...")
     repo.git.add(all=True)
 
     print("提交中...")
     repo.git.commit(m='Auto sync with formatted markdown and moved figures')
 
+    # ✅ 然后再执行 pull，允许历史不同
+    print(f"正在拉取 {remote_name}/{branch_name}...")
+    repo.git.pull(remote_name, branch_name, allow_unrelated_histories=True)
+
+    # ✅ 再推送
     print(f"推送到 {remote_name}/{branch_name}...")
     repo.git.push(remote_name, branch_name)
 
