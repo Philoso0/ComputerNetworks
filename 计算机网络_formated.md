@@ -87,15 +87,15 @@
 
 |                               项目 | 电路交换 | 报文交换 | 分组交换 |
 | -------------------------------: | ---- | ---- | ---- |
-|                 传输时间$\downarrow$ | 最少   | 最多   | 较少   |
-|               存储转发时延$\downarrow$ | 没有   | 较高   | 较低   |
+|                 传输时间 $\downarrow$ | 最少   | 最多   | 较少   |
+|               存储转发时延 $\downarrow$ | 没有   | 较高   | 较低   |
 |                          通信前建立连接 | 是    | 否    | 否    |
-|   缓存开销$\displaystyle \downarrow$ | 无    | 高    | 低    |
+|   缓存开销 $\displaystyle \downarrow$ | 无    | 高    | 低    |
 |                             差错控制 | 不支持  | 支持   | 支持   |
 |                         报文数据有序到达 | 是    | 是    | 否    |
-| 额外控制信息$\displaystyle \downarrow$ | 无    | 少    | 多    |
+| 额外控制信息 $\displaystyle \downarrow$ | 无    | 少    | 多    |
 |                          线路分配灵活性 | 不灵活  | 灵活   | 非常灵活 |
-|    线路利用率$\displaystyle \uparrow$ | 低    | 高    | 非常高  |
+|    线路利用率 $\displaystyle \uparrow$ | 低    | 高    | 非常高  |
 ### 1.1.4 计算机网络的分类
 
 - 分布范围：**广域网**、城域网、**局域网**、个域网
@@ -134,7 +134,7 @@
 	- 处理时延：被路由器处理所花费的时间，如分析首部、查找存储转发表
 	- 排队时延：数据排队进入、排队发出路由器所花的时间
 		- 处理时延和转发时延受网络负载、路由器性能等多因素共同影响
-- **时延带宽积**=传播时延$\displaystyle \times$带宽，单位为bit，其含义为，一条链路中，**已经**从发送端发出但是尚未被接收端接收的**最大比特数**，取决于信道长度和电磁波在信道中的传输速度
+- **时延带宽积**=传播时延 $\displaystyle \times$ 带宽，单位为bit，其含义为，一条链路中，**已经**从发送端发出但是尚未被接收端接收的**最大比特数**，取决于信道长度和电磁波在信道中的传输速度
 	- 主要用于设计最短帧长
 - **往返时延Round-Trip Time, RTT**：表示从发送方发送完数据，到发送方接收到来自接受方的确认总共经历的时间
 ![Round-Trip Time.png](figures/Round-Trip Time.png)
@@ -248,7 +248,7 @@ TCP/IP模型的网络层**去除**了差错控制、流量控制、连接建立�
 	- 码元：信息的最小单位，信号周期称为码元宽度，比如0和1可以是码元，00、01、10、11也可以是码元
 		- 每个信号周期可以传输更多的信息，即每个码元可以携带更多信息
 		- 代价是需要加强信号功率，并且对信道的要求更高
-		- 一个周期内可能出现的信号数为k，则1码元=$\displaystyle \log_{2} k$ bit
+		- 一个周期内可能出现的信号数为k，则1码元= $\displaystyle \log_{2} k$ bit
 - 信道：一条物理线路通常包含两条信道，即发送信道和接收信道
 #### 2.1.1.2 速率、波特率、比特率
 - 速率：单位时间数据传输的速度
@@ -266,7 +266,7 @@ TCP/IP模型的网络层**去除**了差错控制、流量控制、连接建立�
 $$
 极限波特率=2W
 $$
-，其中W是信道的频率带宽，单位Baud，码元/秒。若1个信号周期内可能出现k种信号，则$\displaystyle 1码元=\log_{2} k$bit，则：
+，其中W是信道的频率带宽，单位Baud，码元/秒。若1个信号周期内可能出现k种信号，则 $\displaystyle 1码元=\log_{2} k$ bit，则：
 $$
 极限比特率=2W\log_{2}k\space\text{bps}
 $$
@@ -288,7 +288,7 @@ $$
 $$
 信噪比=10\log_{10} \frac{S}{N}\space\text{dB}
 $$
-但是香农定理中的$\displaystyle \frac{S}{N}$是无单位的信噪比，计算时需要转换：
+但是香农定理中的 $\displaystyle \frac{S}{N}$ 是无单位的信噪比，计算时需要转换：
 $$
 无单位信噪比=10^{有单位信噪比/10}
 $$
@@ -333,7 +333,7 @@ $$
 - 调幅AM：又称幅移键控ASK，调整振幅
 - 调频FM：又称频移键控FSK，调整频率
 - 调相PM：又称相移键控PSK，调整相位
-- 正交幅度调制QAM：将AM和PM进行结合，形成叠加信号。若设计m种幅值、n种相位，则将AM、PM信号两两结合，可以调制出mn种信号，则QAM的1码元=$\displaystyle \log_{2}mn$ bit。“QAM-16”的含义是：采用QAM调制技术，有16种码元，相当于一码元携带4bit信息
+- 正交幅度调制QAM：将AM和PM进行结合，形成叠加信号。若设计m种幅值、n种相位，则将AM、PM信号两两结合，可以调制出mn种信号，则QAM的1码元= $\displaystyle \log_{2}mn$ bit。“QAM-16”的含义是：采用QAM调制技术，有16种码元，相当于一码元携带4bit信息
 ## 2.2 传输媒介 Transmission Medium
 ### 2.2.1 常用的传输介质
 #### 2.2.1.1 导向型传播介质
@@ -377,7 +377,7 @@ $$
 - 其他：红外线通信、激光通信，信号指向性强
 
 
-- 本质上都是用电磁波。根据电磁波公式$\displaystyle c=\lambda f$
+- 本质上都是用电磁波。根据电磁波公式 $\displaystyle c=\lambda f$
 	- 波长越短，频率越高，数据传输能力越强
 	- 波长越短，信号指向性越强，信号越趋近于直线传播
 	- 波长越长，“绕射性”越好，信号的穿透能力越强
@@ -403,7 +403,7 @@ $$
 
 集线器连接的网络，从物理上看是星形拓扑，但逻辑上是总线形拓扑，因为数据是广播式传输的，存在信道争用问题
 
-**集线器连接的各网段会共享带宽**，每台主机能分到的带宽=$\displaystyle \frac{总带宽}{网段数}$
+**集线器连接的各网段会共享带宽**，每台主机能分到的带宽= $\displaystyle \frac{总带宽}{网段数}$
 集线器可以连接不同的传输介质，因此各个网段的物理层接口特性可以不同，这就意味着集线器连接的网段，“物理层协议”可以不同
 
 集线器如果连接了速率不同的网段，会导致所有网段“速率向下兼容”
@@ -448,20 +448,20 @@ $$
 	- 偶校验码：整个校验码（有效信息位和校验位）中“1”的个数位偶数
 	- 检验位可以增加在最高位或者最低位
 	- 实际应用过程中，偶校验会比奇校验更加常用，因为偶校验可以很方便使用硬件实现：各信息进行异或运算，得到的结果即为偶校验位
-		- 比如1001的偶校验位可以由$\displaystyle 1\oplus 0\oplus 0\oplus 1=0$得到
+		- 比如1001的偶校验位可以由 $\displaystyle 1\oplus 0\oplus 0\oplus 1=0$ 得到
 		- 接收方进行校验同样可以对整个校验码使用异或运算，若最终结果等于0则信息无误，结果为1说明出错
 	- 无法校验偶数位错误，比如两个位同时跳变则检错失效
 - CRC校验 循环冗余校验 Cyclic Redundancy Check
 	- 基本思想：数据收发双方约定一个“除数”，K个信息位+R个校验位作为“被除数”，添加校验位后需要保证除法的余数为0。收到数据后，进行除法检查余数是否为0；余数非0说明传输出错
 
-CRC校验码构造例题：设生成多项式为$\displaystyle G(x)=x^{3}+x^{2}+1$，信息码为101001，求对应的CRC码
+CRC校验码构造例题：设生成多项式为 $\displaystyle G(x)=x^{3}+x^{2}+1$ ，信息码为101001，求对应的CRC码
 1. 确定K、R以及生成多项式对应的二进制码
 2. 移位：信息码左移R位，低位补0
 3. 相除：对移位后的信息码，用生成多项式进行**模2除**法，产生余数
 4. 检错和纠错
 
-此题K=信息码的长度=6，R=生成多项式最高次幂=3$\displaystyle \implies$校验码的最高位数$\displaystyle N=K+R=9$
-生成多项式$\displaystyle G(x)=1\cdot x^{3}+1\cdot x^{2}+0\cdot x^{1}+1\cdot x^{0}$对应二进制码1101
+此题K=信息码的长度=6，R=生成多项式最高次幂=3 $\displaystyle \implies$ 校验码的最高位数 $\displaystyle N=K+R=9$
+生成多项式 $\displaystyle G(x)=1\cdot x^{3}+1\cdot x^{2}+0\cdot x^{1}+1\cdot x^{0}$ 对应二进制码1101
 用移位后的1011001除以1101得到余数001，则对应的CRC码为101001 001
 接收方使用1101进行模二除，若余数为000，则传输没有出错；否则传输出错
 
@@ -472,7 +472,7 @@ CRC校验码构造例题：设生成多项式为$\displaystyle G(x)=x^{3}+x^{2}+
 - ​商确定规则：被除数当前位为1则商1，为0则商0，不比较大小
 
 ![模二除.png](figures/模二除.png)
-对于确定的生成多项式，**出错位和余数是相对应的**，R个校验位可以表示R种出错信息。对于K个信息位，R个校验位，若生成多项式选择得当，且$\displaystyle 2^{R}\geq K+R+1$，则CRC码可纠正1位错($\displaystyle 2^{R}-1$种错误状态和一种正确状态)
+对于确定的生成多项式，**出错位和余数是相对应的**，R个校验位可以表示R种出错信息。对于K个信息位，R个校验位，若生成多项式选择得当，且 $\displaystyle 2^{R}\geq K+R+1$ ，则CRC码可纠正1位错( $\displaystyle 2^{R}-1$ 种错误状态和一种正确状态)
 但是实际应用应用过程中传输数据位数和校验位数无法满足上面的不等式，所以一般CRC码只用来检错
 
 - 理论上可以证明CRC码检错能力有以下特点
@@ -491,18 +491,18 @@ CRC校验码构造例题：设生成多项式为$\displaystyle G(x)=x^{3}+x^{2}+
 可靠传输需要解决三个问题：帧丢失、帧重复、帧失序
 流量控制就是要解决收发双方的速率要匹配
 ### 3.4.1 滑动窗口机制
-- 发送窗口$\displaystyle W_{T}$ transit：发送窗口之外的帧不允许被发送
-- 接收窗口$\displaystyle W_{R}$ receive：接收窗口之外的帧直接被丢弃
+- 发送窗口 $\displaystyle W_{T}$ transit：发送窗口之外的帧不允许被发送
+- 接收窗口 $\displaystyle W_{R}$ receive：接收窗口之外的帧直接被丢弃
 - 由接收方通过“**确认机制**”控制发送方的窗口向前滑动，从而实现流量控制
 - 后续讲解的几种协议都由一下部分组成：滑动窗口机制、确认机制、重传机制、帧编号
 
 下面的三种协议都属于**ARQ(Automatic Repeat Request)自动重传请求协议**，S-W、GBN、SR都使用了滑动窗口机制，但是**只有后两种可以被称为滑动窗口协议**，后两种也属于连续ARQ协议
 
 ### 3.4.2 停止-等待协议 S-W
-- 滑动窗口机制：$\displaystyle W_{T}=1，W_{R}=1$
-- 确认机制：确认帧(Acknowledge)$\displaystyle ACK_{i}$，若接收方收到$\displaystyle i$号1帧，且没有检出“差错”，需要给发送方返回确认帧$\displaystyle ACK_{i}$
-- 重传机制：超时重传，若发送方超时未收到$\displaystyle ACK_{i}$，则重传$\displaystyle i$号帧
-- 帧编号：仅需1bit给帧编号，要求$\displaystyle W_{T}+W_{R}\leq 2^{n}$，$\displaystyle n$此时为1
+- 滑动窗口机制： $\displaystyle W_{T}=1，W_{R}=1$
+- 确认机制：确认帧(Acknowledge) $\displaystyle ACK_{i}$ ，若接收方收到 $\displaystyle i$ 号1帧，且没有检出“差错”，需要给发送方返回确认帧 $\displaystyle ACK_{i}$
+- 重传机制：超时重传，若发送方超时未收到 $\displaystyle ACK_{i}$ ，则重传 $\displaystyle i$ 号帧
+- 帧编号：仅需1bit给帧编号，要求 $\displaystyle W_{T}+W_{R}\leq 2^{n}$ ，$\displaystyle n$ 此时为1
 ![停止等待协议.png](figures/停止等待协议.png)
 上图中的数据帧首尾部主要是一些控制信息，包括帧定界信息、校验码、**帧类型**(数据帧or确认帧)、帧序号等。确认帧的数据部分通常很短甚至为空
 
@@ -512,38 +512,38 @@ CRC校验码构造例题：设生成多项式为$\displaystyle G(x)=x^{3}+x^{2}+
 	- 由于接收窗口和发送窗口的距离不超过1，因此用1bit帧编号足矣
 - 不会出现帧失序
 ### 3.4.3 后退N帧协议 GBN Go-Back-N
-- 滑动窗口机制：$\displaystyle W_{T}>1，W_{R}=1$
-- 确认机制：确认帧(Acknowledge)$\displaystyle ACK_{i}$，若接收方收到$\displaystyle i$号1帧，且没有检出“差错”，需要给发送方返回确认帧$\displaystyle ACK_{i}$
-- 重传机制：超时重传，若发送方超时未收到$\displaystyle ACK_{i}$，则重传$\displaystyle i$号帧
-- 帧编号：至少需nbit给帧编号，要求$\displaystyle W_{T}+W_{R}\leq 2^{n}$
+- 滑动窗口机制： $\displaystyle W_{T}>1，W_{R}=1$
+- 确认机制：确认帧(Acknowledge) $\displaystyle ACK_{i}$ ，若接收方收到 $\displaystyle i$ 号1帧，且没有检出“差错”，需要给发送方返回确认帧 $\displaystyle ACK_{i}$
+- 重传机制：超时重传，若发送方超时未收到 $\displaystyle ACK_{i}$ ，则重传 $\displaystyle i$ 号帧
+- 帧编号：至少需nbit给帧编号，要求 $\displaystyle W_{T}+W_{R}\leq 2^{n}$
 - GBN的特殊规则
-	- 关于确认帧：接收方可以“**累积确认**”，即连续接收多个数据帧时，**可以仅返回最后一个帧的ACK**，表示接收方已经收到$\displaystyle i$号帧及其之前的所有帧
-	- 关于超时重传：若发送方超时未收到ACK，则重传$\displaystyle i$号帧，及其之后的所有帧
+	- 关于确认帧：接收方可以“**累积确认**”，即连续接收多个数据帧时，**可以仅返回最后一个帧的ACK**，表示接收方已经收到 $\displaystyle i$ 号帧及其之前的所有帧
+	- 关于超时重传：若发送方超时未收到ACK，则重传 $\displaystyle i$ 号帧，及其之后的所有帧
 
-以$\displaystyle W_{T}=3,W_{R}=1$为例：
+以 $\displaystyle W_{T}=3,W_{R}=1$ 为例：
 ![GBN正常.png](figures/GBN正常.png)
 正常情况：一次直接依次发送3帧，滑动窗口依次接收3帧，返回最后一帧的ACK，表示此前所有的帧已经接收
 
 ![GBN帧丢失.png](figures/GBN帧丢失.png)
-数据帧丢失情况：当收到接收窗口之外的帧时，返回目前已经正确接收的最后一个帧的ACK，即$\displaystyle ACK_3$，发送窗口滑动到3号帧之后。由于未收到0号帧1号帧的确认信息，所以超时重新发送。
+数据帧丢失情况：当收到接收窗口之外的帧时，返回目前已经正确接收的最后一个帧的ACK，即 $\displaystyle ACK_3$ ，发送窗口滑动到3号帧之后。由于未收到0号帧1号帧的确认信息，所以超时重新发送。
 该例可看出，原本已经发送了1号帧，现在却“**后退**”回0号帧重新发送，这样也实现了“流量控制”
 
 ACK丢失情况：发送方由于超时未收到此次发送的第一个帧的ACK信号，会将3个帧都重新发送。此时接收方收到一个**非法帧**，于是返回目前已经收到的最后一个正确帧的ACK
 
-如果$\displaystyle W_{T}+W_{R}\leq 2^{n}$不满足：
+如果 $\displaystyle W_{T}+W_{R}\leq 2^{n}$ 不满足：
 数据帧可能会错乱，可能出现帧序号相同但是不是正确帧的情况
 
 缺点：如果接收方接收帧的速度很慢，或在信道误码率很高的情况下，可能会导致发送方的发送进度经常需要“后退”，传输效率低下
 
 ### 3.4.3 选择重传协议 SR Selective Repeat
-- 滑动窗口机制：$\displaystyle W_{T}>1，W_{R}>1$
-- 确认机制：确认帧(Acknowledge)$\displaystyle ACK_{i}$，若接收方收到$\displaystyle i$号1帧，且没有检出“差错”，需要给发送方返回确认帧$\displaystyle ACK_{i}$
-- 重传机制：超时重传，若发送方超时未收到$\displaystyle ACK_{i}$，则重传$\displaystyle i$号帧
-- 帧编号：至少需nbit给帧编号，要求$\displaystyle W_{T}+W_{R}\leq 2^{n}$
+- 滑动窗口机制： $\displaystyle W_{T}>1，W_{R}>1$
+- 确认机制：确认帧(Acknowledge) $\displaystyle ACK_{i}$ ，若接收方收到 $\displaystyle i$ 号1帧，且没有检出“差错”，需要给发送方返回确认帧 $\displaystyle ACK_{i}$
+- 重传机制：超时重传，若发送方超时未收到 $\displaystyle ACK_{i}$ ，则重传 $\displaystyle i$ 号帧
+- 帧编号：至少需nbit给帧编号，要求 $\displaystyle W_{T}+W_{R}\leq 2^{n}$
 - SR的特殊规则
-	- **否认帧NAK**：若接收方收到$\displaystyle i$号帧，但检测出$\displaystyle i$号帧有“差错”，需要丢弃掉该帧，并给发送方返回否认帧$\displaystyle NAK_{i}$
-	- **请求重传**：若发送方收到$\displaystyle NAK_{i}$，则重传$\displaystyle i$号帧
-	- $\displaystyle W_{R}\leq W_{T}$，即接收窗口不大于发送窗口，实际应用中，通常会取$\displaystyle W_{R}=W_{T}$，这样可以最大限度利用窗口
+	- **否认帧NAK**：若接收方收到 $\displaystyle i$ 号帧，但检测出 $\displaystyle i$ 号帧有“差错”，需要丢弃掉该帧，并给发送方返回否认帧 $\displaystyle NAK_{i}$
+	- **请求重传**：若发送方收到 $\displaystyle NAK_{i}$ ，则重传 $\displaystyle i$ 号帧
+	- $\displaystyle W_{R}\leq W_{T}$ ，即接收窗口不大于发送窗口，实际应用中，通常会取 $\displaystyle W_{R}=W_{T}$ ，这样可以最大限度利用窗口
 
 ![SR正常情况.png](figures/SR正常情况.png)
 正常情况：接收方连续收到N个帧后，每个帧都需要返回一个ACK，发送窗口移动到第一个未收到确认帧的帧
@@ -569,7 +569,7 @@ $$
 $$
 U=\frac{T_{D}}{T_{D}+RTT+T_{A}},
 $$
-其中，$\displaystyle T_{D}$为数据帧传输时延，$\displaystyle T_{A}$为确认帧传输时延，RTT为传播往返时间
+其中， $\displaystyle T_{D}$ 为数据帧传输时延， $\displaystyle T_{A}$ 为确认帧传输时延，RTT为传播往返时间
 
 - 假设：
 - 信道的数据传输速率 = 1 kbps
@@ -596,9 +596,9 @@ $$
 $$
 U=\frac{NT_{D}}{T_{D}+RTT+T_{A}},
 $$
-其中，$\displaystyle N$为发送方滑动窗口的大小，$\displaystyle T_{D}$为数据帧传输时延，$\displaystyle T_{A}$为确认帧传输时延，RTT为传播往返时间
+其中， $\displaystyle N$ 为发送方滑动窗口的大小， $\displaystyle T_{D}$ 为数据帧传输时延， $\displaystyle T_{A}$ 为确认帧传输时延，RTT为传播往返时间
 ![GBN、SR协议信道利用率满的情况.png](figures/GBN、SR协议信道利用率满的情况.png)
-需要注意的是，信道利用率不可能大于1，若$\displaystyle NT_{D}>T_{D}+RTT+T_{A}$，则说明信道上全部时间都有数据在传输，信道利用率最大为1
+需要注意的是，信道利用率不可能大于1，若 $\displaystyle NT_{D}>T_{D}+RTT+T_{A}$ ，则说明信道上全部时间都有数据在传输，信道利用率最大为1
 
 例题：主机甲通过 128kbps 卫星链路，采用滑动窗口协议向主机乙发送数据，链路单向传播延迟为 250ms，帧长为1000字节。不考虑确认帧的开销，为使链路利用率不小于 80%，帧序号的比特数至少是？
 
@@ -615,12 +615,12 @@ $$
 N\geq 7.2
 $$
 所以发送方滑动窗口的大小至少为8
-GBN、SR协议都需要满足$\displaystyle W_{T}+W_{R}\leq 2^{n}$
-但是GBN只需要$\displaystyle W_{R}=1$，而$\displaystyle SR$需要$\displaystyle W_{R}>1$。**所以，对于相同的编号比特数$\displaystyle n$，GBN可以获得比SR更长的滑动窗口宽度$\displaystyle W_{T}$**
+GBN、SR协议都需要满足 $\displaystyle W_{T}+W_{R}\leq 2^{n}$
+但是GBN只需要 $\displaystyle W_{R}=1$ ，而 $\displaystyle SR$ 需要 $\displaystyle W_{R}>1$ 。**所以，对于相同的编号比特数 $\displaystyle n$ ，GBN可以获得比SR更长的滑动窗口宽度 $\displaystyle W_{T}$ **
 $$
 2^{n}\geq W_{T}+W_{R}\geq 8+1=9
 $$
-所以$\displaystyle n$最小为4
+所以 $\displaystyle n$ 最小为4
 ## 3.5 信道划分
 ### 3.5.1 介质访问控制 Medium Access Control
 多个节点共享同一个“总线型”广播信道时，可能发生“信号冲突”，介质访问控制MAC就是要解决如何控制各个节点对传输介质的访问，尽量减少甚至避免冲突
@@ -629,7 +629,7 @@ $$
 - 时分复用 Time Division Multiplexing，TDM
 	- 将时间分为**等长的“TDM帧”**，每个“TDM帧”又**等分为m个“时隙”**，将m个时隙分配给m对用户（节点）使用
 	- 缺点
-		- 每个节点**最多只能分配到信道总带宽的$\displaystyle \frac{1}{m}$**
+		- 每个节点**最多只能分配到信道总带宽的 $\displaystyle \frac{1}{m}$ **
 		- 如果某节点暂时不发数据，会导致被分配的“时隙”闲置，**导致信道利用率低**
 - 统计时分复用 Statistic Time Division Multiplexing，STDM
 	- 又称异步时分复用。在TDM的基础上，动态按序分配时隙
@@ -645,14 +645,14 @@ $$
 	- 优点：各个节点可以同时发送信号，充分利用了信道带宽
 	- 缺点：FDM技术只能用于模拟信号的传输
 - 波分复用 Wavelength Division Multiplexing，WDM
-	- 光的频分复用，基于$\displaystyle c=\lambda f$，$\displaystyle c$表示光速，$\displaystyle \lambda$是波长，$\displaystyle f$是频率
+	- 光的频分复用，基于 $\displaystyle c=\lambda f$ ，$\displaystyle c$ 表示光速， $\displaystyle \lambda$ 是波长， $\displaystyle f$ 是频率
 	- 复用器将各个节点发出的不同波长的光信号“复合”后传输到**光纤**上
 	- 分用器将不同波长的光信号“分离”出来
 	- 光信号的频带范围（带宽）很大，这是波分复用技术的前提，很容易将一根光纤在逻辑上拆分为多个子信道
 ##### 码分复用
 码分复用 Code Division Multiplexing，CDM
 - 给各个节点分配专属“码片序列”
-	- “码片序列”包含m个码片（信号值），可看作m维向量，m维**向量的分量通常取$\displaystyle \pm 1$**
+	- “码片序列”包含m个码片（信号值），可看作m维向量，m维**向量的分量通常取 $\displaystyle \pm 1$ **
 	- 要求各节点的m维向量必须**正交**
 	- 相互通信的**各个节点知道彼此的码片序列**
 - 发送方发送数据
@@ -667,23 +667,23 @@ $$
 		- 结果为0，表示比特0
 
 - 假设现在有A、B、C三个信号站：
-- A的m维码片序列$\displaystyle \vec{a}=(1,1,1,1)$
-	- A站发送信号值$\displaystyle \vec{a}=(1,1,1,1)$表示二进制1
-	- A站发送信号值$\displaystyle -\vec{a}=(-1,-1,-1,-1)$表示二进制0
-- B的m维码片序列$\displaystyle \vec{b}=(1,-1,1,-1)$
-	- B站发送信号值$\displaystyle \vec{b}=(1,-1,1,-1)$表示二进制1
-	- B站发送信号值$\displaystyle -\vec{b}=(-1,1,-1,1)$表示二进制0
-- C的m维码片序列$\displaystyle \vec{c}=(1,1,-1,-1)$
-	- C站发送信号值$\displaystyle \vec{c}=(1,1,-1,-1)$表示二进制1
-	- C站发送信号值$\displaystyle -\vec{c}=(-1,-1,1,1)$表示二进制0
-- 三个向量相互正交：$\displaystyle \vec{a}\cdot\vec{b}=\vec{a}\cdot \vec{c}=\vec{b}\cdot \vec{c}=\vec{0}$，这样才可以将各个信号站的信号分离出来
+- A的m维码片序列 $\displaystyle \vec{a}=(1,1,1,1)$
+	- A站发送信号值 $\displaystyle \vec{a}=(1,1,1,1)$ 表示二进制1
+	- A站发送信号值 $\displaystyle -\vec{a}=(-1,-1,-1,-1)$ 表示二进制0
+- B的m维码片序列 $\displaystyle \vec{b}=(1,-1,1,-1)$
+	- B站发送信号值 $\displaystyle \vec{b}=(1,-1,1,-1)$ 表示二进制1
+	- B站发送信号值 $\displaystyle -\vec{b}=(-1,1,-1,1)$ 表示二进制0
+- C的m维码片序列 $\displaystyle \vec{c}=(1,1,-1,-1)$
+	- C站发送信号值 $\displaystyle \vec{c}=(1,1,-1,-1)$ 表示二进制1
+	- C站发送信号值 $\displaystyle -\vec{c}=(-1,-1,1,1)$ 表示二进制0
+- 三个向量相互正交： $\displaystyle \vec{a}\cdot\vec{b}=\vec{a}\cdot \vec{c}=\vec{b}\cdot \vec{c}=\vec{0}$ ，这样才可以将各个信号站的信号分离出来
 
-假设此时C收到“叠加”信号值$\displaystyle (0,2,0,2)=\vec{a}-\vec{b}$
+假设此时C收到“叠加”信号值 $\displaystyle (0,2,0,2)=\vec{a}-\vec{b}$
 与节点A的码片序列作“规格化内积”
 $$
 \frac{1}{m}\vec{a}\cdot(\vec{a}+(-\vec{b}))=\frac{1}{m}\vec{a}\cdot \vec{a}=1
 $$
-$\displaystyle m$是码片序列的维数，这样就知道节点A发送的信号是比特1；
+$\displaystyle m$ 是码片序列的维数，这样就知道节点A发送的信号是比特1；
 与节点B的码片序列作“规格化内积”
 $$
 \frac{1}{m}\vec{b}\cdot(\vec{a}+(-\vec{b}))=\frac{1}{m}\vec{b}\cdot(-\vec{b})=-1
@@ -721,8 +721,8 @@ CSMA，即载波**监听**多路访问协议，在ALOHA协议基础上改进：�
 	- 先听后发，边听边发，**冲突停发**，**随机重发**
 	- 随机重发要点：**截断二进制指数退避算法**
 		- 随机等待一段时间=r倍的争用期，其中r是随机数
-		- 如果$\displaystyle k\leq 10$，在$\displaystyle [0,2^{k}-1]$区间内随机取一个整数
-		- 如果$\displaystyle k> 10$，在$\displaystyle [0,2^{10}-1]$区间内随机取一个整数
+		- 如果 $\displaystyle k\leq 10$ ，在 $\displaystyle [0,2^{k}-1]$ 区间内随机取一个整数
+		- 如果 $\displaystyle k> 10$ ，在 $\displaystyle [0,2^{10}-1]$ 区间内随机取一个整数
 	- 特别的：
 		- 第10次冲突，是“随机重发”的分水岭
 		- 第16次冲突，直接放弃传帧，报告网络层，*躺平上报*
