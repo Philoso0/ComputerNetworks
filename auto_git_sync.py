@@ -40,7 +40,7 @@ if os.path.exists(attachments_dir):
             # 如果目标文件已存在则覆盖
             if os.path.exists(dst_path):
                 os.remove(dst_path)
-            shutil.move(src_path, dst_path)
+            shutil.copy2(src_path, dst_path)
 else:
     print("attachments 文件夹不存在，跳过移动。")
 
