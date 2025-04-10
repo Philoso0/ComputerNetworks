@@ -30,19 +30,19 @@ figures_dir = os.path.join(repo_path, figures_folder_name)
 
 os.makedirs(figures_dir, exist_ok=True)
 
-if os.path.exists(attachments_dir):
-    for item in os.listdir(attachments_dir):
-        src_path = os.path.join(attachments_dir, item)
-        dst_path = os.path.join(figures_dir, item)
+# 遍历 attachments 下所有子目录及文件
+for root, dirs, files in os.walk(attachments_dir):
+    for file in files:
+        src_file_path = os.path.join(root, file)
+        dst_file_path = os.path.join(figures_dir, file)
 
-        if os.path.isfile(src_path):
-            print(f"移动 {item} 到 figures/")
-            # 如果目标文件已存在则覆盖
-            if os.path.exists(dst_path):
-                os.remove(dst_path)
-            shutil.copy2(src_path, dst_path)
-else:
-    print("attachments 文件夹不存在，跳过移动。")
+        # 如果目标已存在，可选择覆盖或跳过
+        if os.path.exists(dst_file_path):
+            print(f"⚠️ 文件已存在，覆盖：{file}")
+            os.remove(dst_file_path)
+
+        print(f"📁 复制 {src_file_path} 到 {dst_file_path}")
+        shutil.copy2(src_file_path, dst_file_path)
 
 # === Git 同步 ===
 
